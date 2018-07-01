@@ -37,7 +37,7 @@ module.exports = {
     },
     output: {
         path: __dirname + '/dist',
-        publicPath: '/',
+        publicPath: '/history-overflow/',
         filename: 'bundle.js'
     },
     plugins: [
