@@ -1,4 +1,6 @@
 const webpack = require('webpack');
+const path = require('path');
+
 
 module.exports = {
     entry: [
@@ -29,7 +31,12 @@ module.exports = {
                         loader: "sass-loader" // compiles Sass to CSS
                     }
                 ]
-            }
+            },
+            {
+                test: /\.(jpg|png)$/,
+                loader: "url-loader",
+                //loader: 'file?name=[path][name].[ext]',
+            },
         ]
     },
     resolve: {
