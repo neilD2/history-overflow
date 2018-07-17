@@ -26,11 +26,11 @@ class App extends Component {
 					<Header/>
 <SocialMediaShare/>
 
-						<Route path='/' component={Homepage}/>
-					<Route path='/Podcasts' component={Podcasts} />
-					<Route path='/Films' component={Films} />
-					<Route path='/Books' component={Books} />
-					<Route path='/Dates' component={Dates} />
+						<Route path='/history-overflow/' component={Homepage}/>
+					<Route path='/history-overflow/Podcasts' component={Podcasts} />
+					<Route path='/history-overflow/Films' component={Films} />
+					<Route path='/history-overflow/Books' component={Books} />
+					<Route path='/history-overflow/Dates' component={Dates} />
 						<Route path='*' component={Dates} />
 
 
