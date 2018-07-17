@@ -43,8 +43,8 @@ module.exports = {
         extensions: ['*', '.js', '.jsx']
     },
     output: {
-        filename: './history-overflow/bundle.js',
-        publicPath: '/history-overflow/',
+        filename: './bundle.js',
+        publicPath: '/',
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
