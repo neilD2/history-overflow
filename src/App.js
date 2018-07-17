@@ -14,7 +14,7 @@ import Podcasts from "./Pages/Podcasts";
 import Films from "./Pages/Films";
 import Books from "./Pages/Books";
 import Dates from "./Pages/Dates";
-
+import SocialMediaShare from "./Components/SocialMediaShare"
 
 
 
@@ -23,21 +23,26 @@ class App extends Component {
 		return (
 			<Router>
 				<div className="App">
-
 					<Header/>
+<SocialMediaShare/>
 
-					<Route exact path='/' component={Homepage} />
-					<Route exact path='/Podcasts' component={Podcasts} />
-					<Route exact path='/Films' component={Films} />
-					<Route exact path='/Books' component={Books} />
-					<Route exact path='/Dates' component={Dates} />
+						<Route path='/' component={Homepage}/>
+					<Route path='/Podcasts' component={Podcasts} />
+					<Route path='/Films' component={Films} />
+					<Route path='/Books' component={Books} />
+					<Route path='/Dates' component={Dates} />
+						<Route path='*' component={Dates} />
+
+
+
 
 					<div data-selector="one"/>
 
 					<Footer/>
 
 				</div>
-			</Router>
+
+    </Router>
 		);
 	}
 }

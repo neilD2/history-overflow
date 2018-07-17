@@ -43,15 +43,17 @@ module.exports = {
         extensions: ['*', '.js', '.jsx']
     },
     output: {
-        path: __dirname + '/dist',
+        filename: './history-overflow/bundle.js',
         publicPath: '/history-overflow/',
-        filename: 'bundle.js'
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-        contentBase: './dist',
-        hot: true
+        contentBase: path.join(__dirname, 'dist'),
+        hot: true,
+        historyApiFallback: true,
+        inline: true,
+        compress: true,
     }
 };

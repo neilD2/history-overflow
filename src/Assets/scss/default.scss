@@ -106,7 +106,7 @@ footer {
 
 #root {
   background: #ddd url('../img/The_Colosseum_in_Rome_640.175259af.jpg') center top no-repeat;
-  background-position-y: 110px;
+ // background-position-y: 110px;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -121,6 +121,7 @@ body{
   text-shadow: 0 0 5px #000; /* horizontal-offset vertical-offset 'blur' colour */
   -moz-text-shadow: 0 0 5px #000;
   -webkit-text-shadow: 0 0 5px #000;
+  margin: 0;
 
 }
 
@@ -139,6 +140,7 @@ a{
 .container-fluid{
   line-height: 24px;
   padding-bottom: 532px;
+  margin-left: 43px;
   }
 
 summary{
