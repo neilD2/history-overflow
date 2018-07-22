@@ -15,6 +15,9 @@ import Films from "./Pages/Films";
 import Books from "./Pages/Books";
 import Dates from "./Pages/Dates";
 import SocialMediaShare from "./Components/SocialMediaShare"
+import axios from 'axios'
+
+axios.defaults.baseURL = "https://historyoverflow.firebaseio.com"
 
 
 
@@ -26,15 +29,11 @@ class App extends Component {
 					<Header/>
 <SocialMediaShare/>
 
-						<Route path='/history-overflow/' component={Homepage}/>
-					<Route path='/history-overflow/Podcasts' component={Podcasts} />
-					<Route path='/history-overflow/Films' component={Films} />
-					<Route path='/history-overflow/Books' component={Books} />
-					<Route path='/history-overflow/Dates' component={Dates} />
-						<Route path='*' component={Dates} />
-
-
-
+					<Route exact path='/' component={Homepage} />
+					<Route exact path='/Podcasts' component={Podcasts} />
+					<Route exact path='/Films' component={Films} />
+					<Route exact path='/Books' component={Books} />
+					<Route exact path='/Dates' component={Dates} />
 
 					<div data-selector="one"/>
 

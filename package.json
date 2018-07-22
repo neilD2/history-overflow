@@ -6,7 +6,7 @@
   "homepage": "https://neilD2.github.io/history-overflow/",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production && aws s3 sync dist/ s3://www.historyoverflow.com",
     "deploy": "gh-pages -d dist",
     "publish-demo": "npm run build && npm run deploy"
   },
@@ -45,7 +45,9 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "bootstrap": "^4.1.2",
     "dotenv": "^6.0.0",
+    "dotenv-webpack": "^1.5.7",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   }

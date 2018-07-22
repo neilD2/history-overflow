@@ -1,5 +1,6 @@
 import React from "react";
 import fetch from "cross-fetch";
+import MovieVoteAction from './MovieVoteAction';
 
 
 export default class MovieList extends React.Component {
@@ -23,6 +24,7 @@ export default class MovieList extends React.Component {
                     Overview: {overview}
                     <br/>
                     <img src={"https://image.tmdb.org/t/p/w500" + poster_path} />
+                        <MovieVoteAction movieTitle={title} movieOverview={overview} moviePoster={poster_path}/>
                     </li>
 
                 )}

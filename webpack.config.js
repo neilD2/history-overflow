@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: [
@@ -47,7 +47,8 @@ module.exports = {
         publicPath: '/',
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new Dotenv()
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
@@ -55,5 +56,8 @@ module.exports = {
         historyApiFallback: true,
         inline: true,
         compress: true,
+    },
+    node: {
+        fs: "empty"
     }
 };

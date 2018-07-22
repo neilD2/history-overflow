@@ -9,7 +9,7 @@ const Suggestions = (props) => {
               Overview: {r.overview}
               <br/>
               <img src={"https://image.tmdb.org/t/p/w500" + r.poster_path}/>
-              <MovieVoteAction movieId={r.id}/>
+              <MovieVoteAction movieTitle={r.title} movieOverview={r.overview} moviePoster={r.poster_path}/>
           </li>
     }
         </div>
