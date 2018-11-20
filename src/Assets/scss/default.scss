@@ -7,23 +7,38 @@ body{
 p{
   color: white;
   font-size: large;
-  text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
-  -moz-text-shadow: 0 0 2px #000;
-  -webkit-text-shadow: 0 0 2px #000;
+  text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
 }
 
 .movieList{
-  text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
-  -moz-text-shadow: 0 0 2px #000;
-  -webkit-text-shadow: 0 0 2px #000;
+  text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  img{
+    width: 123px;
+  }
+}
+
+.myMovieList{
+  text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
   img{
     width: 123px;
   }
 }
 
 .vote button{
-  margin-left: 9px;
-  margin-top: 6px;
+  margin-left: -12px;
+  margin-top: 9px;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  border-radius: 4px;
+  border: 2px solid white;
+
 }
 .btn-info {
   color: #fff;
@@ -133,9 +148,9 @@ body{
   color: $white;
   font-weight: 500;
   font-style: normal;
-  text-shadow: 0 0 5px #000; /* horizontal-offset vertical-offset 'blur' colour */
-  -moz-text-shadow: 0 0 5px #000;
-  -webkit-text-shadow: 0 0 5px #000;
+  text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
   margin: 0;
 
 }
@@ -162,3 +177,12 @@ summary{
   font-size: large;
 }
 
+iframe {
+  width: 120px;
+  height: 240px;
+  marginWidth: 0;
+  marginHeight: 0;
+  scrolling: 'no';
+  frameBorder: 0;
+  background-image: url("http:////ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=GB&source=ac&ref=tf_til&ad_type=product_link&tracking_id=ndickens-21&marketplace=amazon&region=GB&placement=B0791W7G51&asins=B0791W7G51&linkId=28675d6e41728a5efb6ffa44bdae01bf&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff");
+}

@@ -25,6 +25,9 @@ class Header extends Component {
                             <Link to="/Films">Films</Link>
                         </li>
                         <li>
+                            <Link to="/TV">TV</Link>
+                        </li>
+                        <li>
                             <Link to="/Books">Books</Link>
                         </li>
                         <li>

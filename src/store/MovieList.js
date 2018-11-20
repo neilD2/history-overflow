@@ -1,7 +1,7 @@
 import React from "react";
 import fetch from "cross-fetch";
 import MovieVoteAction from './MovieVoteAction';
-
+import amazonLogo from '../Assets/img/amazon.jpg';
 
 export default class MovieList extends React.Component {
     constructor() {
@@ -25,6 +25,11 @@ export default class MovieList extends React.Component {
                     <br/>
                     <img src={"https://image.tmdb.org/t/p/w500" + poster_path} />
                         <MovieVoteAction movieTitle={title} movieOverview={overview} moviePoster={poster_path}/>
+                        <a href={`https://www.amazon.co.uk/gp/search?ie=UTF8&tag=ndickens-21&linkCode=ur2&linkId=9f95c4cc281e9f0c864e20dde00ea890&camp=1634&creative=6738&keywords=${title}`} target="_blank">
+                            <img style={{ width:"150px", height:"50px", marginLeft:'-11px', marginTop:'11px', borderRadius: '5px'}}
+                                 src={amazonLogo}>
+                            </img>
+                        </a>
                     </li>
 
                 )}
