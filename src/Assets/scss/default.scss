@@ -65,12 +65,13 @@ p{
 }
 
 header {
-  position: relative;
+  position: fixed;
   display: block;
   width: 100%;
   background: $black;
   color: $white;
   height: 110px;
+  z-index: 100000;
 
   img.logo {
     position: absolute;
@@ -132,6 +133,7 @@ footer {
   height:20px;   /* Height of the footer */
   background: $black;
   color: $white;
+  position: fixed;
 }
 
 #root {
@@ -140,6 +142,7 @@ footer {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  padding-bottom: 100%;
 }
 
 body{
@@ -169,8 +172,9 @@ a{
 
 .container-fluid{
   line-height: 24px;
-  padding-bottom: 532px;
   margin-left: 73px;
+  margin-right: 40px;
+  padding-top: 100px;
   }
 
 summary{
@@ -185,4 +189,17 @@ iframe {
   scrolling: 'no';
   frameBorder: 0;
   background-image: url("http:////ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=GB&source=ac&ref=tf_til&ad_type=product_link&tracking_id=ndickens-21&marketplace=amazon&region=GB&placement=B0791W7G51&asins=B0791W7G51&linkId=28675d6e41728a5efb6ffa44bdae01bf&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff");
+}
+
+.video-detail {
+  display: inline-flex;
+  margin-left: 10%;
+  position: absolute;
+  iframe {
+    width: 430px;
+  }
+  .details {
+    padding-left: 30px;
+    max-width: 24rem;
+  }
 }

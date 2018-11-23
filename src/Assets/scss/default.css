@@ -52,12 +52,13 @@ p {
   font-family: -webkit-pictograph; }
 
 header {
-  position: relative;
+  position: fixed;
   display: block;
   width: 100%;
   background: #010000;
   color: #ffffff;
-  height: 110px; }
+  height: 110px;
+  z-index: 100000; }
   header img.logo {
     position: absolute;
     top: 50%;
@@ -102,13 +103,15 @@ footer {
   height: 20px;
   /* Height of the footer */
   background: #010000;
-  color: #ffffff; }
+  color: #ffffff;
+  position: fixed; }
 
 #root {
   background: #ddd url("../img/The_Colosseum_in_Rome_640.175259af.jpg") center top no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center; }
+  background-position: center;
+  padding-bottom: 100%; }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -135,8 +138,9 @@ a {
 
 .container-fluid {
   line-height: 24px;
-  padding-bottom: 532px;
-  margin-left: 73px; }
+  margin-left: 73px;
+  margin-right: 40px;
+  padding-top: 100px; }
 
 summary {
   font-size: large; }
@@ -149,5 +153,15 @@ iframe {
   scrolling: 'no';
   frameBorder: 0;
   background-image: url("http:////ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=GB&source=ac&ref=tf_til&ad_type=product_link&tracking_id=ndickens-21&marketplace=amazon&region=GB&placement=B0791W7G51&asins=B0791W7G51&linkId=28675d6e41728a5efb6ffa44bdae01bf&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff"); }
+
+.video-detail {
+  display: inline-flex;
+  margin-left: 10%;
+  position: absolute; }
+  .video-detail iframe {
+    width: 430px; }
+  .video-detail .details {
+    padding-left: 30px;
+    max-width: 24rem; }
 
 /*# sourceMappingURL=default.css.map */

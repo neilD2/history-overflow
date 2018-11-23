@@ -1,6 +1,7 @@
 import React from "react";
 import fetch from "cross-fetch";
 import MovieVoteAction from './MovieVoteAction';
+import MovieTrailer from './MovieTrailer';
 import amazonLogo from '../Assets/img/amazon.jpg';
 
 export default class MovieList extends React.Component {
@@ -20,18 +21,18 @@ export default class MovieList extends React.Component {
         return (
             <ul>
                 {this.state.movies.map(({ title, overview, poster_path, id }) =>
-                    <li key={id}>Title: {title} <br/>
-                    Overview: {overview}
-                    <br/>
+                    <li key={id}>
+                    <h1>Title: {title} </h1>
+                        <h2>Overview: {overview} </h2>
                     <img src={"https://image.tmdb.org/t/p/w500" + poster_path} />
-                        <MovieVoteAction movieTitle={title} movieOverview={overview} moviePoster={poster_path}/>
-                        <a href={`https://www.amazon.co.uk/gp/search?ie=UTF8&tag=ndickens-21&linkCode=ur2&linkId=9f95c4cc281e9f0c864e20dde00ea890&camp=1634&creative=6738&keywords=${title}`} target="_blank">
-                            <img style={{ width:"150px", height:"50px", marginLeft:'-11px', marginTop:'11px', borderRadius: '5px'}}
-                                 src={amazonLogo}>
-                            </img>
-                        </a>
+                    <MovieTrailer movieTitle={title}/>
+                    <MovieVoteAction movieTitle={title} movieOverview={overview} moviePoster={poster_path}/>
+                    <a href={`https://www.amazon.co.uk/gp/search?ie=UTF8&tag=ndickens-21&linkCode=ur2&linkId=9f95c4cc281e9f0c864e20dde00ea890&camp=1634&creative=6738&keywords=${title}`} target="_blank">
+                        <img style={{ width:"150px", height:"50px", marginLeft:'-11px', marginTop:'11px', borderRadius: '5px'}}
+                             src={amazonLogo}>
+                        </img>
+                    </a>
                     </li>
-
                 )}
             </ul>
         );
