@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MovieList from '../store/MovieList';
-import MyMovieList from '../store/MyMovieList'
-import MovieSearchContainer from '../store/MovieSearchContainer'
+import MovieTvList from '../FilmTv/MovieTvList';
+import MyMovieTvList from '../FilmTv/MyMovieTvList'
+import MovieTvSearchContainer from '../FilmTv/MovieTvSearchContainer'
 
 class Films extends Component {
 
@@ -14,7 +14,7 @@ class Films extends Component {
             </p>
                 <details className="movieList">
                     <summary>See Top 20 History movies trending on TMDB, and vote for your favorite to add to our site's top list</summary>
-                    <MovieList/>
+                    <MovieTvList visualMediaType='movie' titleName='title'/>
                 </details>
             <br/>
              <br/>
@@ -22,14 +22,14 @@ class Films extends Component {
                 <p>
                     Search for your favourite History movie, and vote for it for your favorite to add to our site's top list
                 </p>
-                <MovieSearchContainer/>
+                <MovieTvSearchContainer visualMediaType='movie' titleName='title'/>
                 </div>
                 <br/>
                 <br/>
 
                 <details className="myMovieList">
                     <summary>See our site user's favourite history movies</summary>
-                    <MyMovieList/>
+                    <MyMovieList visualMediaType='movie' titleName='title' />
                 </details>
             </div>
 

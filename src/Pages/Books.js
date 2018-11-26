@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BookSearchContainer from '../Books/BookSearchContainer'
 
 
 class Books extends Component {
@@ -10,8 +11,14 @@ class Books extends Component {
                 books by era, historical figures, etc.
             </p>
 
-            <a>Audio Books</a>
-
+                <br/>
+                <div className="movieSearch">
+                    <p>
+                        Search for your favourite History movie, and vote for it for your favorite to add to our site's top list
+                    </p>
+                    <BookSearchContainer/>
+                </div>
+                <br/>
             </div>
         );
     }

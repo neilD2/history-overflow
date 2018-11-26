@@ -1,16 +1,16 @@
 import React from "react";
 import fetch from "cross-fetch";
 import axios from 'axios';
-import Suggestions from './MovieSearchSuggestions';
+import Suggestions from './MovieTvSearchSuggestions';
 
-class MovieSearchContainer extends React.Component {
+class MovieTvSearchContainer extends React.Component {
     state = {
         query: '',
         results: []
     }
 
     getInfo = () => {
-        axios.get(`${process.env.REACT_APP_TMDB_HOST}/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&with_genres=36&query=${this.state.query}`)
+        axios.get(`${process.env.REACT_APP_TMDB_HOST}/3/search/${this.props.visualMediaType}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&with_genres=36&query=${this.state.query}`)
             .then(({ data }) => {
                 this.setState({
                     results: data.results
@@ -32,6 +32,7 @@ class MovieSearchContainer extends React.Component {
     }
 
     render() {
+
         return (
             <form>
                 <input
@@ -39,7 +40,7 @@ class MovieSearchContainer extends React.Component {
                     ref={input => this.search = input}
                     onChange={this.handleInputChange}
                 />
-                <Suggestions results={this.state.results} />
+                <Suggestions results={this.state.results} titleName={this.props.titleName} visualMediaType={this.props.visualMediaType} />
             </form>
         )
     }
@@ -47,4 +48,4 @@ class MovieSearchContainer extends React.Component {
 
 }
 
-export default MovieSearchContainer
+export default MovieTvSearchContainer

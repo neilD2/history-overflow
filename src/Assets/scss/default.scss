@@ -142,7 +142,7 @@ footer {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  padding-bottom: 100%;
+  min-height: 44rem;
 }
 
 body{
@@ -201,5 +201,14 @@ iframe {
   .details {
     padding-left: 30px;
     max-width: 24rem;
+  }
+}
+
+.review {
+  right: 20%;
+  position: absolute;
+  font-size: 22px;
+  .score {
+    font-size: 48px;
   }
 }

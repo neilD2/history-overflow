@@ -3,7 +3,7 @@ import YTSearch from 'youtube-api-search';
 
 const API_KEY = 'AIzaSyB0ybtQtX4CcyL3DkXyo0brl-b5EfLLXKI';
 
-export default class MovieTrailer extends React.Component{
+export default class MovieTvTrailer extends React.Component{
 
     constructor(props){
         super(props);
