@@ -171,4 +171,7 @@ iframe {
   .review .score {
     font-size: 48px; }
 
+.bookResult a {
+  display: block; }
+
 /*# sourceMappingURL=default.css.map */

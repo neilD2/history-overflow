@@ -19,6 +19,7 @@ class BookSearchContainer extends React.Component {
     }
 
     handleInputChange = () => {
+
         this.setState({
             query: this.search.value
         }, () => {
@@ -42,7 +43,7 @@ class BookSearchContainer extends React.Component {
                     ref={input => this.search = input}
                     onChange={this.handleInputChange}
                 />
-                <Suggestions results={this.state.results} />
+                <Suggestions results={this.state.results} visualMediaType={this.props.visualMediaType} />
             </form>
         )
     }

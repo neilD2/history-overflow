@@ -29,7 +29,7 @@ class Films extends Component {
 
                 <details className="myMovieList">
                     <summary>See our site user's favourite history movies</summary>
-                    <MyMovieList visualMediaType='movie' titleName='title' />
+                    <MyMovieTvList visualMediaType='movie' titleName='title' />
                 </details>
             </div>
 

@@ -20,7 +20,7 @@ const Suggestions = (props) => {
               <MovieTvTrailer movieTitle={r[title]}/>
         <div className="review">rating: <span className="score">{r.vote_average}</span></div>
         <MovieTvVoteAction movieTitle={r[title]} movieOverview={r.overview} moviePoster={r.poster_path} movieScore={r.vote_average} visualMediaType={props.visualMediaType}/>
-              <a href={`https://www.amazon.co.uk/gp/search?ie=UTF8&tag=ndickens-21&linkCode=ur2&linkId=9f95c4cc281e9f0c864e20dde00ea890&camp=1634&creative=6738&keywords=${r[title]}`} target="_blank">
+              <a href={`https://www.amazon.co.uk/s/ref=as_li_ss_tl?url=search-alias=aps&field-keywords=braveheart&rh=i:aps,k:${r[title]}&linkCode=ll2&tag=ndickens-21&linkId=164959695330c7d152d27a1247988585&language=en_GB`} target="_blank">
                   <img style={{ width:"150px", height:"50px", marginLeft:'-11px', marginTop:'11px', borderRadius: '5px'}}
                        src={amazonLogo}>
                   </img>
