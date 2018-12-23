@@ -4,5 +4,6 @@ import App from "./App";
 import "./Assets/scss/_config.scss";
 import "./Assets/scss/default.scss";
 import "./Assets/scss/socialMediaShare.scss"
+import "./Assets/scss/modal.scss"
 
 ReactDOM.render(<App />, document.getElementById("root"));

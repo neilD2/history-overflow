@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { SimpleMap } from '../Maps/Map';
+import { WorldMap } from '../Maps/WorldMapInfo';
+import { WorldMapEvent } from '../Maps/WorldMapEvent';
+import Timeline from '../Maps/Timeline'
 
 class Dates extends Component {
     render() {
@@ -10,7 +12,11 @@ class Dates extends Component {
 
             </p>
                 <div>
-                    <SimpleMap/>
+                   <Timeline/>
+                    <WorldMapEvent/>
+                </div>
+                <div>
+                    <WorldMap/>
                 </div>
             </div>
         );

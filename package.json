@@ -51,6 +51,8 @@
     "google-map-react": "^1.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-google-charts": "^3.0.10",
+    "react-simple-maps": "^0.12.1",
     "youtube-api-search": "0.0.5"
   }
 }

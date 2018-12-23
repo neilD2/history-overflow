@@ -1,0 +1,49 @@
+@import "config";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+button {
+  position: absolute;
+  right: 10%;
+  top: 41%;
+  }
+}
+
+.modal-main {
+  position: relative;
+  background: palegoldenrod;
+  width: 71%;
+  height: auto;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 10px;
+  a {
+    color: aliceblue;
+    font-size: 19px;
+    &:hover {
+      color: $red;
+      @include transition(.4s ease-in-out);
+    }
+  }
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+main {
+  display: -webkit-box;
+}

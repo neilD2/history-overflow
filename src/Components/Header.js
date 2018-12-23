@@ -31,7 +31,7 @@ class Header extends Component {
                             <Link to="/Books">Books</Link>
                         </li>
                         <li>
-                            <Link to="/Dates">Dates & Info</Link>
+                            <Link to="/Dates">Event Map</Link>
                     </li>
 
                     </ul>

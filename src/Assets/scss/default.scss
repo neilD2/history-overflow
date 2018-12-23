@@ -215,3 +215,64 @@ iframe {
 .bookResult a {
   display: block;
 }
+
+#slidecontainer {
+  background-color: #003e99;
+  padding-top: 19px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: #d14c14;;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #d14c14;;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #d14c14;;
+  cursor: pointer;
+}
+
+#event-map {
+  display: flex;
+}
+
+#event-key {
+  width: 20px;
+  height: 20px;
+  background-color: #FF5722;
+  display: block;
+}
+
+#event-text {
+  max-width: 250px;
+  p {
+    font-size: 15px;
+    line-height: 19px;
+  }
+}
+
+#event-text-key {
+  display: flex;
+  h2 {
+    padding-left: 10px;
+    margin: 0;
+  }
+}
