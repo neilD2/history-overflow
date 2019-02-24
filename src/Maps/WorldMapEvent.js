@@ -31,12 +31,14 @@ export class WorldMapEvent extends Component {
             show: false,
             title: '',
             summary: '',
-            link: ''
-        };
+            link: '',
+            fillColor: ''
+    };
     }
 
     render() {
-
+        let fillColor;
+        let divStyle;
 
             return (
                 <div id="event-map">
@@ -56,25 +58,37 @@ export class WorldMapEvent extends Component {
                                     {(geos, proj) =>
                                         geos.map((geo, i) => {
 
-
                                                 let isSelected;
 
                                                 if (this.props.timelineValue == 1) {
                                                     console.log('1her>>>')
                                                     if(geo.properties.CONTINENT === 'North America') {
-
-
                                                      isSelected = true;
-                                                     }
+                                                        fillColor = "#FF5722";
+                                                    }
                                                 }
 
                                             if (this.props.timelineValue == 2) {
                                                 console.log('1her>>>')
-                                                if(geo.properties.CONTINENT === 'North America') {
+                                                if(geo.properties.NAME === 'Azerbaijan' ||
+                                                    geo.properties.NAME === 'Iran' ||
+                                                    geo.properties.NAME === 'Kazakhstan' ||
+                                                    geo.properties.NAME === 'Russia' ||
+                                                    geo.properties.NAME === 'Turkmenistan'
+                                                ) {
                                                     console.log('2')
                                                     isSelected = true;
+                                                    fillColor = "#133337";
+                                                }
+                                                if(geo.properties.CONTINENT === 'North America') {
+                                                    isSelected = true;
+                                                    fillColor = "#FF5722";
                                                 }
                                             }
+
+                                            divStyle = fillColor;
+
+                                           // this.setState({fillColor:fillColor})
 
                                                 return (
                                                     <Geography
@@ -85,19 +99,19 @@ export class WorldMapEvent extends Component {
                                                         // onClick={this.handleClick}
                                                         style={{
                                                             default: {
-                                                                fill: isSelected ? "#FF5722" : "#ECEFF1",
+                                                                fill: isSelected ? fillColor : "#ECEFF1",
                                                                 stroke: "#607D8B",
                                                                 strokeWidth: 0.75,
                                                                 outline: "none",
                                                             },
                                                             hover: {
-                                                                fill: isSelected ? "#FF5722" : "#ECEFF1",
+                                                                fill: isSelected ? fillColor : "#ECEFF1",
                                                                 stroke: "#607D8B",
                                                                 strokeWidth: 0.75,
                                                                 outline: "none",
                                                             },
                                                             pressed: {
-                                                                fill: isSelected ? "#FF5722" : "#ECEFF1",
+                                                                fill: isSelected ? fillColor : "#ECEFF1",
                                                                 stroke: "#607D8B",
                                                                 strokeWidth: 0.75,
                                                                // outline: "none",
@@ -112,27 +126,41 @@ export class WorldMapEvent extends Component {
                         </ComposableMap>
                     </div>
                     <div id="selected-countries">
-                        {
-                            this.state.selected.length > 0
-                                ?
-                                this.state.selected.map(item =>
-                                    <div key={item} style={tagStyles}>
-                                        { item }
-                                    </div>
-                                )
-                                :
-                                <div style={{padding: "0.25rem 0.5rem"}}>
+
+
+{console.log('fillColor', divStyle)}
+                        {(this.props.timelineValue == 1) &&
+
+                        <div style={{padding: "0.25rem 0.5rem"}}>
                                     <h2>Events</h2>
                                     <h2>Late Pleistocene</h2>
                                     <div id="event-text">
+                                        <p>Much of the Late Pleistocene age was dominated by glaciations, such as the Wisconsin glaciation in North America and the Weichselian glaciation and Würm glaciation in Eurasia). Many megafauna became extinct during this age, a trend that continued into the Holocene. The Late Pleistocene contains the Upper Paleolithic stage of human development, including the out-of-Africa migration and dispersal of anatomically modern humans and the extinction of the last remaining archaic human species.</p>
                                         <div id="event-text-key">
-                                        <div id="event-key"></div>
-                                        <h2>North America</h2>
+                                            <div id="event-key" style={{backgroundColor:divStyle}}></div>
+                                            <h2>North America</h2>
                                         </div>
                                         <p>According to George Carr Frison, Bison occidentalis and Bison antiquus, an extinct subspecies of the smaller present-day bison, survived the Late Pleistocene period, between about 12 and 11 ka ago. Plains and Rocky Mountain First Nations depended on these bison as their major food source.[6][Notes 1] Earlier kills of camels, horses, and muskoxen found at Wally's beach were dated to 13.1–13.3 ka B.P.</p>
                                     </div>
                                 </div>
                         }
+
+                        {(this.props.timelineValue == 2) &&
+
+                        <div style={{padding: "0.25rem 0.5rem"}}>
+                            <h2>new</h2>
+                            <h2>Late Pleistocene</h2>
+                            <div id="event-text">
+                                <p>Much of the Late Pleistocene age was dominated by glaciations, such as the Wisconsin glaciation in North America and the Weichselian glaciation and Würm glaciation in Eurasia). Many megafauna became extinct during this age, a trend that continued into the Holocene. The Late Pleistocene contains the Upper Paleolithic stage of human development, including the out-of-Africa migration and dispersal of anatomically modern humans and the extinction of the last remaining archaic human species.</p>
+                                <div id="event-text-key">
+                                    <div id="event-key" style={{backgroundColor:divStyle}}></div>
+                                    <h2>North America</h2>
+                                </div>
+                                <p>According to George Carr Frison, Bison occidentalis and Bison antiquus, an extinct subspecies of the smaller present-day bison, survived the Late Pleistocene period, between about 12 and 11 ka ago. Plains and Rocky Mountain First Nations depended on these bison as their major food source.[6][Notes 1] Earlier kills of camels, horses, and muskoxen found at Wally's beach were dated to 13.1–13.3 ka B.P.</p>
+                            </div>
+                        </div>
+                    }
+
                     </div>
                 </div>
             )

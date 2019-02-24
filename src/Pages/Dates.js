@@ -13,7 +13,6 @@ class Dates extends Component {
             </p>
                 <div>
                    <Timeline/>
-                    <WorldMapEvent/>
                 </div>
                 <div>
                     <WorldMap/>
