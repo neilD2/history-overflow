@@ -142,7 +142,7 @@ footer {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  min-height: 44rem;
+  min-height: 100%;
 }
 
 body{
@@ -179,6 +179,16 @@ a{
 
 summary{
   font-size: large;
+}
+
+summary::marker {
+  color: red;
+  font-size: xx-large;
+}
+
+summary::-webkit-details-marker {
+  color: red;
+  font-size: xx-large;
 }
 
 iframe {
