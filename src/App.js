@@ -20,15 +20,22 @@ import axios from 'axios'
 
 axios.defaults.baseURL = "https://historyoverflow.firebaseio.com"
 
-
-
 class App extends Component {
-
 	render() {
+		const headerStyles = {
+			main: {
+				display:'flex',
+				flexDirection:'column',
+				alignItems: 'center',
+				height: '100vh',
+			}
+		}
+
 		return (
 			<Router onUpdate={() => window.scrollTo(0, 0)}>
 				<div className="App">
-					<Header/>
+					<meta name="viewport" content="width=device-width"/>
+					<Header style={headerStyles.main}/>
 <SocialMediaShare/>
 					<Route exact path='/' component={Homepage} />
 					<Route exact path='/Podcasts' component={Podcasts} />

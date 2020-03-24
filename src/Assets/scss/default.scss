@@ -1,5 +1,43 @@
 @import "config";
 
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 95%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+.header{
+  text-shadow: none;
+
+  a {
+    color: white;
+  }
+}
+
 body{
   background-color: transparent;
 }
@@ -54,7 +92,7 @@ p{
 }
 
 
-.title{
+/*.title{
   position: absolute;
   top: 50%; left:128px;
   @include translateY(-50%);
@@ -65,14 +103,6 @@ p{
 }
 
 header {
-  position: fixed;
-  display: block;
-  width: 100%;
-  background: $black;
-  color: $white;
-  height: 110px;
-  z-index: 100000;
-
   img.logo {
     position: absolute;
     top: 50%;
@@ -83,49 +113,8 @@ header {
     height: 103px;
     width: 103px;
     border-radius: 66%;
-
   }
-
-  nav,
-  nav ul,
-  nav ul li {
-    margin: 10px;
-    padding: 0;
-  }
-
-  nav {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    @include translateY(-50%);
-  }
-
-  ul li {
-    list-style-type: none;
-    display: inline-block;
-    margin-right: 10px;
-
-    &.last {
-      margin: 0;
-    }
-
-    a {
-      font-size: 19px;
-      line-height: normal;
-      color: $white;
-    }
-
-  }
-
-}
-
-@media only screen and (max-width: 890px) {
-  header nav ul {
-    margin-top: 65px;
-  }
-
-}
-
+}*/
 
 footer {
   bottom:0;
