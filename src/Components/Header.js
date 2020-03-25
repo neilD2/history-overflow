@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MenuItem from './MenuItem';
 import MenuButton from './MenuButton';
 import Menu from './Menu';
+import myImage from '../Assets/img/logo.png';
 
 class Header extends Component {
     constructor(props){
@@ -64,6 +65,9 @@ class Header extends Component {
               <div style={styles.container}>
                   <MenuButton open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='white'/>
                   <div style={styles.logo}><a href="/">History Overflow</a></div>
+                  <div>
+                    <img style={{padding: "12px"}} src={myImage} alt="logo" height="42" width="42"/>
+                  </div>
               </div>
               <Menu open={this.state.menuOpen}>
                   {menuItems}
