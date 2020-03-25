@@ -25,7 +25,8 @@ export default class MovieTvList extends React.Component {
         titleName = this.props.titleName;
 
         return (
-            <ul>
+            <ul className="content">
+                <p>Top 20 History shows / movies trending on TMDB, and vote for your favorite to add to our site's top list</p>
                 {this.state.movies.map(
                     (obj) =>
                     <li key={obj.id}>

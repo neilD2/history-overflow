@@ -40,29 +40,44 @@
 
 body{
   background-color: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  color: $white;
+  font-weight: 500;
+  font-style: normal;
+  text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
+  margin: 0;
+
+}
+
+ul.content {
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+.container {
+  margin: 52px;
+  padding: 16px;
+  background-color: rgba(0, 127, 200, 0.5);
 }
 
 p{
   color: white;
   font-size: large;
-  text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
-  -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
-  -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
 }
 
 .movieList{
-  text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
-  -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
-  -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
   img{
     width: 123px;
   }
 }
 
 .myMovieList{
-  text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
-  -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
-  -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
   img{
     width: 123px;
   }
@@ -91,31 +106,6 @@ p{
 
 }
 
-
-/*.title{
-  position: absolute;
-  top: 50%; left:128px;
-  @include translateY(-50%);
-  font-size: 40px;
-  line-height: normal;
-  color: $white;
-  font-family: -webkit-pictograph;
-}
-
-header {
-  img.logo {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    @include translateY(-50%);
-    background: #ddd url('../img/logo1.png') center top no-repeat;
-    background-size: 103px;
-    height: 103px;
-    width: 103px;
-    border-radius: 66%;
-  }
-}*/
-
 footer {
   bottom:0;
   width:100%;
@@ -127,24 +117,11 @@ footer {
 
 #root {
   background: #ddd url('../img/The_Colosseum_in_Rome_640.175259af.jpg') center top no-repeat;
- // background-position-y: 110px;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  background-blend-mode: color-burn;
   min-height: 100%;
-}
-
-body{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-  color: $white;
-  font-weight: 500;
-  font-style: normal;
-  text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
-  -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
-  -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
-  margin: 0;
-
 }
 
 a{
@@ -156,28 +133,40 @@ a{
     color: $red;
     @include transition(.4s ease-in-out);
   }
-
 }
 
-.container-fluid{
-  line-height: 24px;
-  margin-left: 73px;
-  margin-right: 40px;
-  padding-top: 100px;
-  }
-
-summary{
+summary {
   font-size: large;
-}
-
-summary::marker {
-  color: red;
-  font-size: xx-large;
+  list-style-image: none;
+  position: relative;
 }
 
 summary::-webkit-details-marker {
-  color: red;
-  font-size: xx-large;
+  background: none;
+  color: transparent;
+}
+
+summary::before {
+  content: ">";
+  font-size: x-large;
+  left: -8px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.5s ease-in-out;
+}
+
+[open] > summary::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0}
+  100%  {opacity: 1}
 }
 
 iframe {

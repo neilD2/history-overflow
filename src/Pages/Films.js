@@ -7,17 +7,24 @@ class Films extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
-            <p>
-                Here we have a top ten of historical films list. Please use our search feature to search over 10,000 historical
-                films by era, historical figures, etc.
-            </p>
+            <div className="container">
+              <h1> Films </h1>
+
+              <div>
+                <p>
+                    Here we have a top ten of historical films list. Please use our search feature to search over 10,000 historical
+                    films by era, historical figures, etc.
+                </p>
+              </div>
+              <div>
                 <details className="movieList">
-                    <summary>See Top 20 History movies trending on TMDB, and vote for your favorite to add to our site's top list</summary>
-                    <MovieTvList visualMediaType='movie' titleName='title'/>
+                  <summary>See our favourite history movies here</summary>
+                   <MovieTvList visualMediaType='movie' titleName='title'/>
                 </details>
+              </div>
             <br/>
              <br/>
+
                 <div className="movieSearch">
                 <p>
                     Search for your favourite History movie, and vote for it for your favorite to add to our site's top list
@@ -26,11 +33,12 @@ class Films extends Component {
                 </div>
                 <br/>
                 <br/>
-
+              <div>
                 <details className="myMovieList">
-                    <summary>See our site user's favourite history movies</summary>
+                    <summary>See our site users favourite history movies</summary>
                     <MyMovieTvList visualMediaType='movie' titleName='title' />
                 </details>
+              </div>
             </div>
 
         );

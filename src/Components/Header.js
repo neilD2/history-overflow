@@ -24,12 +24,11 @@ class Header extends Component {
         const styles=
           {
               container:{
-                  position: 'absolute',
+                  position: 'fixed',
                   top: 0,
                   left: 0,
                   height: '52px',
                   zIndex: '99',
-                  opacity: 0.9,
                   display:'flex',
                   alignItems:'center',
                   background: 'black',
