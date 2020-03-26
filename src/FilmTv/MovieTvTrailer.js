@@ -7,24 +7,37 @@ export default class MovieTvTrailer extends React.Component{
 
     constructor(props){
         super(props);
+        this.handleExpandClick = this.handleExpandClick.bind(this);
+        this.handleHideClick = this.handleHideClick.bind(this);
         this.state = {
             selectedVideo: null
         };
     }
 
-    componentDidMount() {
-
-        YTSearch({key: API_KEY, term: this.props.movieTitle + 'trailer'}, (videos) => {
+    handleExpandClick() {
+        <div>{this.props.movieTitle}</div>
+        YTSearch({key: API_KEY, term: this.props.movieTitle + ' trailer'}, (videos) => {
             this.setState({
                 selectedVideo: videos[0]
             });
         });
     }
 
-    render() {
+    handleHideClick() {
+        this.setState({
+            selectedVideo: null
+        });
+    }
 
+    render() {
         if (!this.state.selectedVideo) {
-            return <div>Loading...</div>
+            return (
+              <div className="video-detail">
+                  <details className="movieList">
+                      <summary data={this.props} onClick={this.handleExpandClick}>Show trailer</summary>
+                  </details>
+              </div>
+            )
         }
 
         const videoId = this.state.selectedVideo.id.videoId;
@@ -32,6 +45,9 @@ export default class MovieTvTrailer extends React.Component{
 
         return (
             <div className="video-detail">
+                <details className="movieList">
+                    <summary onClick={this.handleHideClick}>Hide trailer</summary>
+                </details>
                 <div className="embed-responsive embed-responsive-16by9">
                     <iframe className="embed-responsive-item" src={url}></iframe>
                 </div>

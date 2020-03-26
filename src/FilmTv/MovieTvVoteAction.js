@@ -31,7 +31,7 @@ export default class MovieTvVoteAction extends React.Component{
         console.log('vote>>',this.props.visualMediaType)
         return(
             <div className="vote">
-            <button type="button" className="btn btn-info" data={this.props} onClick={this.handleClick}>vote for this {this.props.visualMediaType} title</button>
+            <button type="button" className="btn btn-info" data={this.props} onClick={this.handleClick}>vote for this {this.props.visualMediaType}</button>
             </div>
         )
     }
