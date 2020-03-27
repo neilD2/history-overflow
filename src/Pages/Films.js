@@ -18,7 +18,7 @@ class Films extends Component {
               </div>
               <div>
                 <details className="movieList">
-                  <summary>See our favourite history movies here</summary>
+                  <summary>See the top trending TMDB history movies here</summary>
                    <MovieTvList visualMediaType='movie' titleName='title'/>
                 </details>
               </div>

@@ -10,7 +10,6 @@ const iframe = "//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&On
 export default class MyMovieList extends React.Component {
 
     constructor() {
-        console.log(process.env.DB_HOST);
         super();
         this.state = { myMovies:[]
          }

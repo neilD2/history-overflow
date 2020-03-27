@@ -10,7 +10,7 @@ class MovieTvSearchContainer extends React.Component {
     }
 
     getInfo = () => {
-        axios.get(`${process.env.REACT_APP_TMDB_HOST}/3/search/${this.props.visualMediaType}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&with_genres=36&query=${this.state.query}`)
+        axios.get(`${process.env.REACT_APP_TMDB_HOST}/3/search/${this.props.visualMediaType}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${this.state.query}`)
             .then(({ data }) => {
                 this.setState({
                     results: data.results
@@ -35,11 +35,18 @@ class MovieTvSearchContainer extends React.Component {
 
         return (
             <form>
-                <input
-                    placeholder="Search for..."
-                    ref={input => this.search = input}
-                    onChange={this.handleInputChange}
-                />
+                <div className="box">
+                    <div className="container-1">
+                        <span className="icon"><i className="fa fa-search"></i></span>
+                        <input
+                          type="search"
+                          id="search"
+                          placeholder="Search..."
+                          ref={input => this.search = input}
+                          onChange={this.handleInputChange}
+                        />
+                    </div>
+                </div>
                 <Suggestions results={this.state.results} titleName={this.props.titleName} visualMediaType={this.props.visualMediaType} />
             </form>
         )

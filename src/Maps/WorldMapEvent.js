@@ -61,7 +61,6 @@ export class WorldMapEvent extends Component {
                                                 let isSelected;
 
                                                 if (this.props.timelineValue == 1) {
-                                                    console.log('1her>>>')
                                                     if(geo.properties.CONTINENT === 'North America') {
                                                      isSelected = true;
                                                         fillColor = "#FF5722";
@@ -69,14 +68,12 @@ export class WorldMapEvent extends Component {
                                                 }
 
                                             if (this.props.timelineValue == 2) {
-                                                console.log('1her>>>')
                                                 if(geo.properties.NAME === 'Azerbaijan' ||
                                                     geo.properties.NAME === 'Iran' ||
                                                     geo.properties.NAME === 'Kazakhstan' ||
                                                     geo.properties.NAME === 'Russia' ||
                                                     geo.properties.NAME === 'Turkmenistan'
                                                 ) {
-                                                    console.log('2')
                                                     isSelected = true;
                                                     fillColor = "#133337";
                                                 }

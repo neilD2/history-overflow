@@ -11,7 +11,6 @@ class BookSearchContainer extends React.Component {
     getInfo = () => {
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.state.query}+subject:history&key=AIzaSyB0ybtQtX4CcyL3DkXyo0brl-b5EfLLXKI`)
             .then(({ data }) => {
-            console.log('>>>',data.items)
                 this.setState({
                     results: data.items
                 })
@@ -33,9 +32,6 @@ class BookSearchContainer extends React.Component {
     }
 
     render() {
-
-        console.log('this.state.results', this.state.results)
-
         return (
             <form>
                 <input

@@ -41,7 +41,6 @@ export class WorldMap extends Component {
 
         axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/History%20of%20${geoName}`)
             .then(({ data }) => {
-                console.log('data', data.extract)
                 this.setState({
                     title: data.title,
                     summary: data.extract,
@@ -57,9 +56,6 @@ export class WorldMap extends Component {
     };
 
     handleClick(geo) {
-        console.log('geo', geo.properties.CONTINENT);
-        console.log('geo', geo.properties.NAME);
-        console.log('geo', geo);
         this.showModal(geo.properties.NAME)
         const isSelected = this.state.selected.indexOf(geo.properties.ISO_A3) !== -1
         this.setState({

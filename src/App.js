@@ -17,6 +17,7 @@ import Books from "./Pages/Books";
 import Dates from "./Pages/Dates";
 import SocialMediaShare from "./Components/SocialMediaShare"
 import axios from 'axios'
+import ScrollToTopButton from './Components/ScrollToTopButton'
 
 axios.defaults.baseURL = "https://historyoverflow.firebaseio.com"
 
@@ -35,16 +36,17 @@ class App extends Component {
 			<Router onUpdate={() => window.scrollTo(0, 0)}>
 				<div className="App">
 					<meta name="viewport" content="width=device-width"/>
+					<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
 					<Header style={headerStyles.main}/>
-<SocialMediaShare/>
+{/*<SocialMediaShare/>*/}
 					<Route exact path='/' component={Homepage} />
 					<Route exact path='/Podcasts' component={Podcasts} />
 					<Route exact path='/Films' component={Films} />
 					<Route exact path='/TV' component={TV} />
 					<Route exact path='/Books' component={Books} />
 					<Route exact path='/Dates' component={Dates} />
-
-					<div data-selector="one"/>
+					<ScrollToTopButton/>
+					{/*<div data-selector="one"/>*/}
 
 					<Footer/>
 
