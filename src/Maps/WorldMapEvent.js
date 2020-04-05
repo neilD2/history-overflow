@@ -9,10 +9,6 @@ import file from '../static/world-50m-simplified.json';
 
 const wrapperStyles = {
     fontFamily: "Roboto, sans-serif",
-    width: "100%",
-    maxWidth: 980,
-    marginTop: "20px",
-    marginLeft: "-78px",
     backgroundColor: "#003e99"
 }
 

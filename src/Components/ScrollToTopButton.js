@@ -8,7 +8,11 @@ class ScrollToTopButton extends Component {
 
   render() {
     return (
-      <button onClick={this.scrollToTop} id="myBtn" title="Go to top">&#8679;</button>
+      <button onClick={this.scrollToTop} id="myBtn" title="Go to top">
+        <span className="icon">
+          <i className="fa fa-arrow-up"></i>
+        </span>
+      </button>
     );
   }
 }

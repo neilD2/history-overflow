@@ -28,7 +28,7 @@ export default class BookVoteAction extends React.Component{
     render(){
         return(
             <div className="vote">
-            <button type="button" className="btn btn-info" data={this.props} onClick={this.handleClick}>vote for this {this.props.visualMediaType} title</button>
+            <button type="button" className="btn btn-info" data={this.props} onClick={this.handleClick}>vote for this {this.props.visualMediaType}</button>
             </div>
         )
     }

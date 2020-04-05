@@ -19,7 +19,7 @@ const Suggestions = (props) => {
     });
 
     const options = films.map(r => (
-      <div key={r.id}>
+      <div key={r.id} className="itemContainer">
           <h1>Title: {r[title]} </h1>
           <h2>Overview: {r.overview} </h2>
           <img src={"https://image.tmdb.org/t/p/w500" + r.poster_path}/>

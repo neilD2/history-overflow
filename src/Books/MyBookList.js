@@ -44,23 +44,29 @@ export default class MyBookList extends React.Component {
     render() {
 
         return (
-            <ul>
+            <div>
                 {this.state.myBooks.map(myBook =>
-                    <li  key={myBook.bookTitle}>
+                    <div key={myBook.bookTitle} className="itemContainer">
                         <h1>Title: {myBook.bookTitle} </h1>
-                        <h2>Overview: {myBook.bookOverview} </h2>
-                        <h2>Vote Count: {myBook.vote_count} </h2>
-                        <img src={myBook.bookPoster} />
-                        <div className="review">rating: <span className="score">{myBook.bookScore}</span></div>
-                        <BookVoteAction bookTitle={myBook.bookTitle} bookOverview={myBook.bookOverview} bookPoster={myBook.bookPoster} bookScore={myBook.vote_average} visualMediaType={this.props.visualMediaType}/>
-                            <a href={`https://www.amazon.co.uk/gp/search?ie=UTF8&tag=ndickens-21&linkCode=ur2&linkId=9f95c4cc281e9f0c864e20dde00ea890&camp=1634&creative=6738&keywords=${myBook.bookTitle}`} target="_blank">
+                      <div className="displayFlexSpaceBetween">
+                      <img src={myBook.bookPoster} />
+                        <div className="review">rating: <span className="score" style={{ padding: 18 }}>{myBook.bookScore}</span></div>
+                      </div>
+                      <div className="displayFlexSpaceBetween">
+                      <BookVoteAction bookTitle={myBook.bookTitle} bookOverview={myBook.bookOverview} bookPoster={myBook.bookPoster} bookScore={myBook.vote_average} visualMediaType={this.props.visualMediaType}/>
+                      <div>
+                        <a href={`https://www.amazon.co.uk/gp/search?ie=UTF8&tag=ndickens-21&linkCode=ur2&linkId=9f95c4cc281e9f0c864e20dde00ea890&camp=1634&creative=6738&keywords=${myBook.bookTitle}`} target="_blank">
                             <img style={{ width:"150px", height:"50px", marginLeft:'-11px', marginTop:'11px', borderRadius: '5px'}}
                                     src={amazonLogo}>
                             </img>
-                                </a>
-                    </li>
+                        </a>
+                      </div>
+                      </div>
+                      <h2>Vote Count: {myBook.vote_count} </h2>
+                      <p>Overview: {myBook.bookOverview} </p>
+                    </div>
                 )}
-            </ul>
+            </div>
         );
     }
 }

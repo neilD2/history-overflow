@@ -3,11 +3,11 @@ import { WorldMap } from '../Maps/WorldMapInfo';
 import { WorldMapEvent } from '../Maps/WorldMapEvent';
 import Timeline from '../Maps/Timeline'
 
-class Dates extends Component {
+class Maps extends Component {
     render() {
         return (
             <div className="container">
-              <h1> Dates </h1>
+              <h1> Maps </h1>
               <div>
                     <p>
                         Use this search feature to search wikipedia on all historical events, figures and information.
@@ -24,4 +24,4 @@ class Dates extends Component {
     }
 }
 
-export default Dates;
+export default Maps;

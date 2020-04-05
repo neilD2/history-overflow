@@ -61,8 +61,8 @@ ul.content {
 }
 
 .container {
-  margin: 52px;
-  padding: 16px;
+  margin: 52px 14px 0 14px;
+  padding: 8px;
   background-color: rgba(0, 127, 200, 0.5);
 }
 
@@ -70,12 +70,17 @@ ul.content {
   display: flex;
 }
 
+.displayFlexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
 p{
   color: white;
   font-size: large;
 }
 
-.movieList{
+.itemContainer{
   img{
     width: 123px;
   }
@@ -138,6 +143,7 @@ p{
   margin-top: 17px;
   z-index: 1;
   color: #4f5b66;
+  text-shadow: none;
 }
 
 .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
@@ -304,7 +310,7 @@ iframe {
 }
 
 #event-map {
-  display: flex;
+ // display: flex;
 }
 
 #event-key {
@@ -328,3 +334,29 @@ iframe {
     margin: 0;
   }
 }
+
+.itemContainer {
+  border: 1px solid azure;
+  padding: 8px;
+  border-radius: 20px;
+  margin: 14px 0;
+}
+
+.starIcon {
+  margin-top: 16px;
+  span {
+    position: relative;
+    bottom: 5px;
+  }
+  i {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+

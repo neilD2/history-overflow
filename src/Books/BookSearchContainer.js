@@ -34,11 +34,18 @@ class BookSearchContainer extends React.Component {
     render() {
         return (
             <form>
-                <input
-                    placeholder="Search for..."
-                    ref={input => this.search = input}
-                    onChange={this.handleInputChange}
-                />
+                <div className="box">
+                    <div className="container-1">
+                        <span className="icon"><i className="fa fa-search"></i></span>
+                        <input
+                          type="search"
+                          id="search"
+                          placeholder="Search..."
+                          ref={input => this.search = input}
+                          onChange={this.handleInputChange}
+                        />
+                    </div>
+                </div>
                 <Suggestions results={this.state.results} visualMediaType={this.props.visualMediaType} />
             </form>
         )

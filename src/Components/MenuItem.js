@@ -51,7 +51,7 @@ class MenuItem extends Component {
             onMouseEnter={()=>{this.handleHover();}}
             onMouseLeave={()=>{this.handleHover();}}
             onClick={this.props.onClick}>
-            <Link to={`/${this.props.children}`}>{this.props.children}</Link>
+            <Link to={`/${this.props.children}`}>{this.props.children.replace(/([A-Z])/g, ' $1')}</Link>
           </div>
         <div style={styles.line}/>
       </div>
