@@ -7,10 +7,15 @@ import "./Assets/scss/socialMediaShare.scss"
 import "./Assets/scss/modal.scss"
 import Favicon from 'react-favicon';
 import myImage from './Assets/img/logo.png';
+import index from "./redux/index";
+import { Provider } from "react-redux";
+import store from "./redux/store/index";
 
 ReactDOM.render(
   <div>
-      <Favicon url={myImage} />
+    <Favicon url={myImage} />
+    <Provider store={store}>
       <App />
+    </Provider>
   </div>
   , document.getElementById("root"));

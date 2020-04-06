@@ -5,7 +5,7 @@ import MovieTvTrailer from './MovieTvTrailer';
 import amazonLogo from '../Assets/img/amazon.jpg';
 import AddToListAction from "../Components/AddToListAction"
 
-import MediaContainer2 from '../Components/MediaContainer2'
+import MediaContainer from '../Components/MediaContainer'
 
 let titleName = '';
 
@@ -31,8 +31,8 @@ export default class MovieTvList extends React.Component {
             <div className="content">
                 <p>Top 20 History shows / movies trending on TMDB, and vote for your favorite to add to our site's top list</p>
                 {this.state.movies.map(
-                    (obj) =>
-                      MediaContainer2(obj, titleName, this.props.visualMediaType)
+                    (obj, i) =>
+                      MediaContainer(obj, titleName, i)
                 )}
             </div>
         );

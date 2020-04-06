@@ -342,14 +342,15 @@ iframe {
   margin: 14px 0;
 }
 
-.starIcon {
-  margin-top: 16px;
-  span {
-    position: relative;
-    bottom: 5px;
-  }
+button.starIcon {
+  cursor: pointer;
+  border-radius: 4px;
+  border: 2px solid white;
+  height: fit-content;
+  width: 23%;
+  padding: 8px;
   i {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 

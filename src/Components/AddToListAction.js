@@ -1,38 +1,43 @@
 import React, { Component } from 'react';
 import MyLists from '../Pages/MyLists';
-const favourites = []
+import { connect } from "react-redux";
+import { addFavourites } from "../redux/actions/index";
 
-class AddToListAction extends Component {
+function mapDispatchToProps(dispatch) {
+  return {
+    addFavourites: article => dispatch(addFavourites(article))
+  };
+}
 
-  constructor(props){
+class ConnectedForm extends Component {
+  constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      favourites: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleClick() {
-    // Build the expiration date string:
-    var expiration_date = new Date();
-    var cookie_string = '';
-    expiration_date.setFullYear(expiration_date.getFullYear() + 1);
-// Build the set-cookie string:
-    cookie_string = `favourites_cookies=${this.props}; path=/; expires=${expiration_date.toUTCString()};`
-// Create or update the cookie:
-    document.cookie = cookie_string;
-
-
-
-      var e = 'Thu Nov 26 3017 15:44:38'; document.cookie = 'myObj='+ JSON.stringify(this.props) +';expires=' + e;
-
+  handleSubmit() {
+    const favourites = this.props
+    this.props.addFavourites({ favourites });
+    this.setState({ favourites: favourites });
   }
-
   render() {
+    const { favourites } = this.state;
     return (
-        <div className="starIcon" data={this.props} onClick={this.handleClick}>
-          <span>Add to List </span>
-          <i className="fa fa-star-o"></i>
-        </div>
-  );
+      <button type="button" className="starIcon btn btn-info"
+        onClick={this.handleSubmit}>
+          Add To List
+        <i className="fa fa-star-o"></i>
+      </button>
+    );
   }
 }
+
+const AddToListAction = connect(
+  null,
+  mapDispatchToProps
+)(ConnectedForm);
 
 export default AddToListAction;

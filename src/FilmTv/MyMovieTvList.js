@@ -48,8 +48,8 @@ export default class MyMovieList extends React.Component {
 
         return (
             <div>
-                {this.state.myMovies.map(myMovie =>
-                  MediaContainer(myMovie)
+                {this.state.myMovies.map((obj, i) =>
+                  MediaContainer(obj,'', i)
                 )}
             </div>
         )}
