@@ -1,4 +1,5 @@
 import { ADD_FAVOURITES } from "../constants/action-types";
+import { REMOVE_FAVOURITES } from "../constants/action-types";
 
 const initialState = {
   favourites: []
@@ -9,6 +10,9 @@ function rootReducer(state = initialState, action) {
     return Object.assign({}, state, {
       favourites: state.favourites.concat(action.payload)
     });
+  }
+  if (action.type === REMOVE_FAVOURITES) {
+    return {favourites: state.favourites.filter(element => element !== action.payload)};
   }
   return state;
 }

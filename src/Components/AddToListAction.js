@@ -2,41 +2,58 @@ import React, { Component } from 'react';
 import MyLists from '../Pages/MyLists';
 import { connect } from "react-redux";
 import { addFavourites } from "../redux/actions/index";
+import { removeFavourites } from "../redux/actions/index";
 
 function mapDispatchToProps(dispatch) {
   return {
-    addFavourites: article => dispatch(addFavourites(article))
+    addFavourites: favourite => dispatch(addFavourites(favourite)),
+    removeFavourites: favourite => dispatch(removeFavourites(favourite))
   };
 }
+
+const select = state => {
+  return { favourites: state.favourites };
+};
 
 class ConnectedForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      favourites: ""
+      favourites: props.favourites
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onAddFavourite = this.onAddFavourite.bind(this)
+    this.onRemoveFavourite = this.onRemoveFavourite.bind(this);
   }
 
-  handleSubmit() {
-    const favourites = this.props
-    this.props.addFavourites({ favourites });
-    this.setState({ favourites: favourites });
+  onAddFavourite(movieTitle) {
+    this.props.addFavourites( movieTitle );
   }
+
+  onRemoveFavourite(movieTitle) {
+    this.props.removeFavourites( movieTitle );
+  }
+
   render() {
-    const { favourites } = this.state;
+
     return (
-      <button type="button" className="starIcon btn btn-info"
-        onClick={this.handleSubmit}>
-          Add To List
-        <i className="fa fa-star-o"></i>
-      </button>
-    );
-  }
+      <button
+        type="button"
+        className={this.props.favourites.includes(this.props.movieTitle) ? "starIcon btn btn-info selected" : "starIcon btn btn-info"}
+        onClick={() => this.props.favourites.includes(this.props.movieTitle) ? this.onRemoveFavourite(this.props.movieTitle) : this.onAddFavourite(this.props.movieTitle) }
+      >
+        {this.props.favourites.includes(this.props.movieTitle) ? "Remove Favourite" : "Add Favourite"}
+        <i
+          className="fa fa-star-o"
+          style={this.props.favourites.includes(this.props.movieTitle) ? { color: 'yellow', fontWeight: 'bold' } : { } }
+        />
+        </button>
+    )
+
+    }
 }
 
 const AddToListAction = connect(
-  null,
+  select,
   mapDispatchToProps
 )(ConnectedForm);
 
