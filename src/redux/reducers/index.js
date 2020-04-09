@@ -1,8 +1,8 @@
-import { ADD_FAVOURITES } from "../constants/action-types";
-import { REMOVE_FAVOURITES } from "../constants/action-types";
+import { ADD_FAVOURITES, REMOVE_FAVOURITES, REMOVE_FAVOURITE_ITEMS, ADD_FAVOURITE_ITEMS } from '../constants/action-types'
 
 const initialState = {
-  favourites: []
+  favourites: [],
+  favouriteItems: []
 };
 
 function rootReducer(state = initialState, action) {
@@ -12,7 +12,15 @@ function rootReducer(state = initialState, action) {
     });
   }
   if (action.type === REMOVE_FAVOURITES) {
-    return {favourites: state.favourites.filter(element => element !== action.payload)};
+    return {...state,favourites: state.favourites.filter(element => element !== action.payload)};
+  }
+  if (action.type === ADD_FAVOURITE_ITEMS) {
+    return Object.assign({}, state, {
+      favouriteItems: state.favouriteItems.concat(action.payload)
+    });
+  }
+  if (action.type === REMOVE_FAVOURITE_ITEMS) {
+    return {...state,favouriteItems: state.favouriteItems.filter(element => element.movieTitle !== action.payload.movieTitle)};
   }
   return state;
 }

@@ -13,6 +13,7 @@ import {Podcasts, ContactUs, Homepage} from "./Pages/StaticPages"
 import FilmsAndTv from "./Pages/FilmsAndTv";
 import Books from "./Pages/Books";
 import Maps from "./Pages/Maps";
+import News from "./Pages/News"
 import MyLists from './Pages/MyLists'
 import SocialMediaShare from "./Components/SocialMediaShare"
 import axios from 'axios'
@@ -39,6 +40,7 @@ class App extends Component {
 					<Header style={headerStyles.main}/>
 {/*<SocialMediaShare/>*/}
 					<Route exact path='/' component={Homepage} />
+					<Route exact path='/News' component={News} />
 					<Route exact path='/Podcasts' component={Podcasts} />
 					<Route exact path="/Films" render={props => <FilmsAndTv mediaType="movie" titleName="title"  {...props} />} />
 					<Route exact path="/TV" render={props => <FilmsAndTv mediaType="TV" titleName="name" {...props} />} />

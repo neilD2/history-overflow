@@ -50,7 +50,7 @@ class Header extends Component {
                   transition: 'filter 0.5s ease',
               },
           }
-        const menu = ['Podcasts','Films','TV','Books', 'Maps', 'MyLists', 'ContactUs']
+        const menu = ['News','Podcasts','Films','TV','Books', 'Maps', 'MyLists', 'ContactUs']
         const menuItems = menu.map((val,index)=>{
             return (
               <MenuItem

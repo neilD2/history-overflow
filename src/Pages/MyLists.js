@@ -7,20 +7,30 @@ import MovieTvTrailer from '../FilmTv/MovieTvTrailer'
 import MediaContainer from '../Components/MediaContainer'
 
 const select = state => {
-  console.log('state>', state)
-  return { favourites: state.favourites };
+  return { favouriteItems: state.favouriteItems };
 };
 
-const ConnectedList = ({ favourites }) => (
+const ConnectedList = ({ favouriteItems }) => (
   <div className="container">
     <h1> My Lists </h1>
-    <ul>
-    {favourites.map((favourite, i) => (
+    <p>List of your Favourite items</p>
+    <button
+      type="button"
+      className="btn btn-info"
+    >save list</button>
+    <button
+      type="button"
+      className="btn btn-info"
+    >share list</button>
+    <div>
+      <ul>
+      {favouriteItems.map((favourite, i) => (
 
-      MediaContainer(favourite.favourites,'', i)
+        MediaContainer(favourite,'', i)
 
-    ))}
-    </ul>
+      ))}
+      </ul>
+    </div>
   </div>
 
 );
