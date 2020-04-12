@@ -53,10 +53,12 @@
     "dotenv": "^6.0.0",
     "dotenv-webpack": "^1.5.7",
     "google-map-react": "^1.1.1",
+    "html-react-parser": "^0.10.3",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-google-charts": "^3.0.10",
     "react-simple-maps": "^0.12.1",
+    "rss-parser": "^3.7.6",
     "youtube-api-search": "0.0.5"
   }
 }

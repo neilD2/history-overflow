@@ -1,45 +1,55 @@
 import React, { useState, useEffect } from "react";
+let Parser = require('rss-parser');
+let parser = new Parser();
+import parse from 'html-react-parser';
+import axios from 'axios'
 import regeneratorRuntime from "regenerator-runtime";
+import MediaContainer from '../Components/MediaContainer'
 
-const News = () => {
-  const [hasError, setErrors] = useState(false);
-  const [articles, setArticles] = useState({});
+export default class News extends React.Component {
 
-  async function fetchData() {
-    const res = await fetch("http://newsapi.org/v2/everything?domains=historynewsnetwork.org&apiKey=5dd724c572c144b09f6c67b9354c66cb");
-
-    res.json()
-      .then(res => res.articles)
-      .then(articles =>  setArticles(articles))
-      .catch(err => setErrors(err));
-
+  constructor() {
+    super();
+    this.state = { myArticles:[]
+    }
   }
 
-  useEffect(() => {
-    fetchData();
-  });
+  componentDidMount() {
 
-  return (
-    <div className="container">
-      <h1> News </h1>
-      <div>
-        <ul>
-          {
-            articles.length > 0 ? articles.map(art =>
-              <li>
-                <div>{art.title}</div>
-                <div>{art.description}</div>
-                <div><img src={art.urlToImage}></img></div>
+    axios.get(`/guardArticles.json?orderBy="pubDate"&limitToLast=10`)
+      .catch(error => console.log(error))
+      .then( res => {
 
-              </li>)  : ''
+        let copy=[];
+        Object.keys(res.data).forEach(key => {
+          copy.push(res.data[key])
+        });
+
+        this.setState({
+          myArticles :copy
+        })
+    })
+  }
+
+  render() {
+
+    return (
+      <div className="container">
+        <h1> News </h1>
+        <p>news...</p>
+        <ul className="content">
+          { this.state.myArticles &&
+          this.state.myArticles.length > 0 ? this.state.myArticles.map((art, i) =>
+            <li key={i} className="itemContainer">
+              <h2>{art.title }</h2>
+              <img src={art.thumbnail} style={{width: "100%"}}></img>
+              <div>{art.bodyText}
+              </div>
+            </li>
+          ): ''
           }
-
         </ul>
-        <hr />
-        <span>Has error: {JSON.stringify(hasError)}</span>
       </div>
-    </div>
-  );
-};
-
-export default News;
+    )
+  }
+}
