@@ -358,6 +358,19 @@ button.starIcon {
   }
 }
 
+.articleContent {
+  overflow: hidden;
+  line-height: 1.2em;
+  height: 3.6em;
+}
+.articleContent.collapsed{
+  overflow: hidden;
+}
+.articleContent.expanded{
+  overflow: visible;
+  height: auto;
+}
+
 @media screen and (min-width: 600px) {
   .container {
     padding-left: 20%;

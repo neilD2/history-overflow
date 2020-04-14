@@ -10,7 +10,9 @@ export default class News extends React.Component {
 
   constructor() {
     super();
-    this.state = { myArticles:[]
+    this.state = {
+      myArticles:[],
+      expanded: false
     }
   }
 
@@ -33,18 +35,26 @@ export default class News extends React.Component {
 
   render() {
 
+    const { expanded } = this.state;
+    const toggledClass = expanded ? 'expanded' : 'collapsed';
+
     return (
       <div className="container">
         <h1> News </h1>
-        <p>news...</p>
+        <p>latest history news articles courtesy of the Guardian.co.uk</p>
         <ul className="content">
           { this.state.myArticles &&
           this.state.myArticles.length > 0 ? this.state.myArticles.map((art, i) =>
             <li key={i} className="itemContainer">
+              <span>{art.pubDate}</span>
               <h2>{art.title }</h2>
               <img src={art.thumbnail} style={{width: "100%"}}></img>
-              <div>{art.bodyText}
+              <div style={{marginTop: "10px"}} className={`articleContent ${toggledClass}`}>
+                {art.bodyText}
               </div>
+              <span style={{color: "white"}} onClick={() => this.setState({ expanded: !expanded })}>
+                {expanded ? '- View Less' : '+ View More'}
+              </span>
             </li>
           ): ''
           }

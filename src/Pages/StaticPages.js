@@ -6,12 +6,12 @@ const Homepage = () => {
       <h1> Home </h1>
       <p>
         Greetings! This site is all about history.
-        <br/>
-        <br/>
+      </p>
+      <p>
         I believe every single person should have a rounded concept of the greatest events that have occurred during the time
         that history has been recorded.
-        <br/>
-        <br/>
+      </p>
+      <p>
         Also, get a picture of the key characters of the past, both ''good' and 'bad'.
       </p>
     </div>
