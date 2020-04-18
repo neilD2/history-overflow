@@ -371,6 +371,23 @@ button.starIcon {
   height: auto;
 }
 
+nav {
+  display: flex;
+  overflow: auto;
+}
+
+.pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.pagination li {
+  margin: 0 1px;
+  background: aliceblue;
+}
+
 @media screen and (min-width: 600px) {
   .container {
     padding-left: 20%;

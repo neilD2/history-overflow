@@ -41,7 +41,7 @@ class App extends Component {
 					<Header style={headerStyles.main}/>
 {/*<SocialMediaShare/>*/}
 					<Route exact path='/' component={Homepage} />
-					<Route exact path='/News' component={News} />} />
+					<Route exact path='/News' component={News} />
 					<Route exact path='/Podcasts' component={Podcasts} />
 					<Route exact path="/Films" render={props => <FilmsAndTv mediaType="movie" titleName="title"  {...props} />} />
 					<Route exact path="/TV" render={props => <FilmsAndTv mediaType="TV" titleName="name" {...props} />} />

@@ -5,61 +5,54 @@ import parse from 'html-react-parser';
 import axios from 'axios'
 import regeneratorRuntime from "regenerator-runtime";
 import MediaContainer from '../Components/MediaContainer'
+import AddToListAction from '../Components/AddToListAction'
+import ArticleText from '../Components/ArticleText'
+import Posts from '../components/Posts';
+import Pagination from '../components/Pagination';
 
-export default class News extends React.Component {
+const News = () => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
 
-  constructor() {
-    super();
-    this.state = {
-      myArticles:[],
-      expanded: false
-    }
-  }
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      const res = await axios.get('/guardArticles.json?orderBy="pubDate"&limitToLast=200');
+      let copy=[];
+      Object.keys(res.data).forEach(key => {
+        copy.push(res.data[key])
+      });
+      console.log('copy>>',copy)
 
-  componentDidMount() {
+      setPosts(copy);
+      setLoading(false);
+    };
 
-    axios.get(`/guardArticles.json?orderBy="pubDate"&limitToLast=10`)
-      .catch(error => console.log(error))
-      .then( res => {
+    fetchPosts();
+  }, []);
 
-        let copy=[];
-        Object.keys(res.data).forEach(key => {
-          copy.push(res.data[key])
-        });
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-        this.setState({
-          myArticles :copy
-        })
-    })
-  }
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
-  render() {
+  return (
+    <div className="container">
+      <h1> News </h1>
+      <p>latest history news articles courtesy of the Guardian.co.uk</p>
+      <Posts posts={currentPosts} loading={loading} />
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={posts.length}
+        paginate={paginate}
+      />
+    </div>
+  );
+};
 
-    const { expanded } = this.state;
-    const toggledClass = expanded ? 'expanded' : 'collapsed';
-
-    return (
-      <div className="container">
-        <h1> News </h1>
-        <p>latest history news articles courtesy of the Guardian.co.uk</p>
-        <ul className="content">
-          { this.state.myArticles &&
-          this.state.myArticles.length > 0 ? this.state.myArticles.map((art, i) =>
-            <li key={i} className="itemContainer">
-              <span>{art.pubDate}</span>
-              <h2>{art.title }</h2>
-              <img src={art.thumbnail} style={{width: "100%"}}></img>
-              <div style={{marginTop: "10px"}} className={`articleContent ${toggledClass}`}>
-                {art.bodyText}
-              </div>
-              <span style={{color: "white"}} onClick={() => this.setState({ expanded: !expanded })}>
-                {expanded ? '- View Less' : '+ View More'}
-              </span>
-            </li>
-          ): ''
-          }
-        </ul>
-      </div>
-    )
-  }
-}
+export default News;
