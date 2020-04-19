@@ -371,6 +371,10 @@ button.starIcon {
   height: auto;
 }
 
+.pagination-container {
+  width: 285px;
+}
+
 nav {
   display: flex;
   overflow: auto;
@@ -392,6 +396,9 @@ nav {
   .container {
     padding-left: 20%;
     padding-right: 20%;
+  }
+  .pagination-container {
+    width: fit-content;
   }
 }
 

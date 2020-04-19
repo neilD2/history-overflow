@@ -24,8 +24,6 @@ const News = () => {
       Object.keys(res.data).forEach(key => {
         copy.push(res.data[key])
       });
-      console.log('copy>>',copy)
-
       setPosts(copy);
       setLoading(false);
     };
@@ -40,6 +38,8 @@ const News = () => {
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
+  const paginateBack = () => setCurrentPage(currentPage -1);
+  const paginateForward = () => setCurrentPage(currentPage +1);
 
   return (
     <div className="container">
@@ -50,6 +50,9 @@ const News = () => {
         postsPerPage={postsPerPage}
         totalPosts={posts.length}
         paginate={paginate}
+        paginateBack={paginateBack}
+        paginateForward={paginateForward}
+        currentPage={currentPage}
       />
     </div>
   );
