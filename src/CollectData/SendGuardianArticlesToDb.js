@@ -51,20 +51,6 @@ const articleArr = []
             .catch(error => console.log(error))
         }
       })
-
-    /*  axios.post(`/guardArticles.json`, {"id":art.id,"title":art.fields.headline,"thumbnail":art.fields.thumbnail,"bodyText":art.fields.bodyText, "pubDate": art.fields.firstPublicationDate})
-        .then(res => console.log(res))
-        .catch(error => console.log(error))*/
-
-    /*  axios.get(`/guard-articles.json?&equalTo="${art.fields.title}"`)
-        .catch(error => console.log(error))
-        // if movie title is not found, add it
-        .then(res => {if(Object.keys(res.data).length===0){
-          axios.post(`/guard-articles.json`, {"title":art.fields.headline,"thumbnail":art.fields.thumbnail,"bodyText":art.fields.bodyText, "pubDate": art.fields.firstPublicationDate})
-            .then(res => console.log(res))
-            .catch(error => console.log(error))
-        }
-        })*/
   }
 
   fetchGuardArcData();

@@ -24,6 +24,7 @@ const News = () => {
       Object.keys(res.data).forEach(key => {
         copy.push(res.data[key])
       });
+      copy.reverse()
       setPosts(copy);
       setLoading(false);
     };

@@ -18,6 +18,7 @@ import MyLists from './Pages/MyLists'
 import SocialMediaShare from "./Components/SocialMediaShare"
 import axios from 'axios'
 import ScrollToTopButton from './Components/ScrollToTopButton'
+//import updateGuardArt from './CollectData/SendGuardianArticlesToDb'
 
 axios.defaults.baseURL = "https://historyoverflow.firebaseio.com"
 
@@ -32,6 +33,8 @@ class App extends Component {
 				height: '100vh',
 			}
 		}
+
+		//updateGuardArt;
 
 		return (
 			<Router onUpdate={() => window.scrollTo(0, 0)}>
