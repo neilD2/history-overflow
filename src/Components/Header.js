@@ -21,35 +21,6 @@ class Header extends Component {
     }
 
     render(){
-        const styles=
-          {
-              container:{
-                  position: 'fixed',
-                  top: 0,
-                  left: 0,
-                  height: '52px',
-                  zIndex: '99',
-                  display:'flex',
-                  alignItems:'center',
-                  background: 'black',
-                  width: '100%',
-                  color: 'white',
-                  fontFamily:'Lobster',
-              },
-              logo: {
-                  margin: '0 auto',
-                  fontSize: '32px'
-              },
-              body: {
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  width: '100vw',
-                  height: '100vh',
-                  filter: this.state.menuOpen ? 'blur(2px)':null,
-                  transition: 'filter 0.5s ease',
-              },
-          }
         const menu = ['News','Podcasts','Films','TV','Books', 'Maps', 'MyLists', 'ContactUs']
         const menuItems = menu.map((val,index)=>{
             return (
@@ -61,11 +32,11 @@ class Header extends Component {
 
         return(
           <div className="header">
-              <div style={styles.container}>
+              <div className="headerContainer">
                   <MenuButton open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='white'/>
-                  <div style={styles.logo}><a href="/">History Overflow</a></div>
-                  <div>
-                    <img style={{padding: "12px"}} src={myImage} alt="logo" height="42" width="42"/>
+                  <div className="titleLogo"><a href="/">History Overflow</a></div>
+                  <div className="logo">
+                    <img src={myImage} alt="logo"/>
                   </div>
               </div>
               <Menu open={this.state.menuOpen}>

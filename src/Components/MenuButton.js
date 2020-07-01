@@ -22,18 +22,13 @@ class MenuButton extends Component {
   render(){
     const styles = {
       container: {
-        height: '32px',
-        width: '32px',
         display:'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         cursor: 'pointer',
-        padding: '4px',
       },
       line: {
-        height: '2px',
-        width: '20px',
         background: this.state.color,
         transition: 'all 0.2s ease',
       },
@@ -53,12 +48,12 @@ class MenuButton extends Component {
       },
     }
     return(
-      <div style={styles.container}
+      <div className="hamburgerIcon" style={styles.container}
            onClick={this.props.onClick ? this.props.onClick:
              ()=> {this.handleClick();}}>
-        <div style={{...styles.line,...styles.lineTop}}/>
-        <div style={{...styles.line,...styles.lineMiddle}}/>
-        <div style={{...styles.line,...styles.lineBottom}}/>
+        <div className={this.state.open ? "hamburgerIconLineOpen" : "hamburgerIconLine"} style={{...styles.line,...styles.lineTop}}/>
+        <div className={this.state.open ? "hamburgerIconLineOpen" : "hamburgerIconLine"} style={{...styles.line,...styles.lineMiddle}}/>
+        <div className={this.state.open ? "hamburgerIconLineOpen" : "hamburgerIconLine"} style={{...styles.line,...styles.lineBottom}}/>
       </div>
     )
   }

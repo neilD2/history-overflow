@@ -5,12 +5,8 @@ class Footer extends Component {
         return (
             <footer>
 
-                <span style={{marginLeft: '20px',paddingRight:'20px'}}>Copyright © 2018 History Overflow</span>
-
-
-                <span>Contact Neil Dickens: </span>
-
-                <a href="mailto:neil_duk@yahoo.com" target="_blank">neil_duk@yahoo.com</a>
+                <div>Copyright © 2018 History Overflow</div>
+                <div>Contact Neil Dickens: <a href="mailto:neil_duk@yahoo.com" target="_blank">neil_duk@yahoo.com</a></div>
 
             </footer>
         );

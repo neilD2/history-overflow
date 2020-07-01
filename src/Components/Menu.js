@@ -29,16 +29,13 @@ class Menu extends Component {
         color: '#fafafa',
         transition: 'height 0.3s ease',
         zIndex: 2,
-      },
-      menuList: {
-        paddingTop: '3rem',
       }
     }
     return(
       <div style={styles.container}>
         {
           this.state.open?
-            <div style={styles.menuList}>
+            <div className="menuList">
               {this.props.children}
             </div>:null
         }

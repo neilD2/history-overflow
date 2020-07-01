@@ -23,7 +23,7 @@ const ContactUs = () => {
     <div className="container">
       <h1> Contact Us </h1>
       <p>
-        Contact for me any info: neil_duk@yahoo.com
+        Contact for me for any info: neil_duk@yahoo.com
       </p>
 
     </div>
