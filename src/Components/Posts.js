@@ -9,10 +9,10 @@ const Posts = ({ posts, loading }) => {
   return (
       <ul className="content">
         {posts.map((art, i) => (
-          <li key={i} className="itemContainer">
-            <span>{art.pubDate}</span>
+          <li key={i} className="itemContainer news">
             <h2>{art.title }</h2>
-            <img src={art.thumbnail} style={{width: "100%"}}></img>
+            <div className='date'>{new Date(art.pubDate).toDateString()}</div>
+            <img className='newsImage' src={art.thumbnail} style={{width: "100%"}}></img>
             <ArticleText bodyText={art.bodyText}/>
           </li>
         ))}

@@ -1,14 +1,19 @@
 import React from 'react';
 import axios from 'axios';
+import { Button } from '../StyledComponents/StyledComponents'
 
 export default class BookVoteAction extends React.Component{
 
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.state = { clicked: false }
     }
 
     handleClick() {
+        this.setState({
+            clicked: true
+        })
         axios.get(`/${this.props.visualMediaType}s.json?orderBy="bookTitle"&equalTo="${this.props.bookTitle}"`)
             .catch(error => console.log(error))
             // if movie title is not found, add it
@@ -27,9 +32,11 @@ export default class BookVoteAction extends React.Component{
 
     render(){
         return(
-            <div className="vote">
-            <button type="button" className="btn btn-info" data={this.props} onClick={this.handleClick}>vote for this {this.props.visualMediaType}</button>
-            </div>
+            <Button
+              className="voteButton"
+              data={this.props}
+              disabled={this.state.clicked}
+              onClick={this.handleClick}>vote for this {this.props.visualMediaType}</Button>
         )
     }
 

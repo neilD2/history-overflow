@@ -29,6 +29,12 @@ const FilmsAndTv = (props) => {
         </details>
       </div>
       <br/>
+      <div>
+        <details className="myMovieList">
+          <summary>See our site users favourite history {filmToMovieText ? filmToMovieText : props.mediaType} </summary>
+          <MyMovieTvList visualMediaType={props.mediaType.toLowerCase()} titleName={props.titleName}/>
+        </details>
+      </div>
       <br/>
       <div className="movieSearch">
         <p>
@@ -38,12 +44,6 @@ const FilmsAndTv = (props) => {
       </div>
       <br/>
       <br/>
-      <div>
-        <details className="myMovieList">
-          <summary>See our site users favourite history {filmToMovieText ? filmToMovieText : props.mediaType} </summary>
-          <MyMovieTvList visualMediaType={props.mediaType.toLowerCase()} titleName={props.titleName}/>
-        </details>
-      </div>
     </div>
   )
 }

@@ -22,20 +22,20 @@ const MediaContainer = (props, titleName, i) => {
     <h2>Overview: {movieOverview} </h2>
     {props.vote_count && <h2>Vote Count: {props.vote_count} </h2>}
     <div className="displayFlexSpaceBetween">
-      <img src={"https://image.tmdb.org/t/p/w500" + moviePoster}/>
+      <img className="movieTvImage" src={"https://image.tmdb.org/t/p/w500" + moviePoster}/>
       <div className="review">
         <span style={{ verticalAlign: "super" }}>rating: </span>
-        <span className="score">{movieScore}<span style={{ fontSize: "14px" }}>/10</span></span></div>
+        <span className="score">{movieScore}<span className="scoreMax">/10</span></span></div>
     </div>
-    <div className="displayFlexSpaceBetween">
+    <div className="vote-and-amazon-container displayFlexSpaceBetween">
       <MovieTvVoteAction movieTitle={movieTitle} movieOverview={movieOverview}
                          moviePoster={moviePoster} movieScore={movieScore}
                          visualMediaType='movie'/>
-      <div>
+      <div className="amazon-link">
         <a
           href={`https://www.amazon.co.uk/gp/search?ie=UTF8&tag=ndickens-21&linkCode=ur2&linkId=9f95c4cc281e9f0c864e20dde00ea890&camp=1634&creative=6738&keywords=${movieTitle}`}
           target="_blank">
-          <img style={{ width: "150px", height: "50px", marginLeft: '-11px', marginTop: '11px', borderRadius: '5px' }}
+          <img
                src={amazonLogo}>
           </img>
         </a>

@@ -22,7 +22,7 @@ const Suggestions = (props) => {
     const options = films.map((obj, i) => (
       MediaContainer(obj, title, i)
     ))
-    return <div>{options}</div>
+    return <div className="content">{options}</div>
 
 }
 

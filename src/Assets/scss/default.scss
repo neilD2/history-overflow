@@ -39,9 +39,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 52px;
+    height: 66px;
     z-index: 99;
     display: flex;
+    flex-flow: wrap;
     align-items: center;
     background: black;
     width: 100%;
@@ -72,6 +73,12 @@
   }
 }
 
+html{
+  height: 100%;
+  margin: auto;
+  overflow: scroll;
+}
+
 body{
   background-color: transparent;
   font-family: 'Open Sans', sans-serif;
@@ -83,15 +90,20 @@ body{
   -moz-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
   -webkit-text-shadow: 1px 1px 2px #0f0f96, 0 0 1em #0f0f96, 0 0 0.2em #0f0f96;
   margin: 0;
-
 }
 
 li {
   list-style: none;
 }
 
-ul.content {
+.content {
   padding: 0;
+  padding-bottom: 40px;
+  .itemContainer {
+    padding: 20px;
+    background-color: #007bb6;
+    border-radius: 20px;
+  }
 }
 
 *:focus {
@@ -156,7 +168,7 @@ p{
   height: 50px;
   background: lightgrey;;
   border: none;
-  font-size: 10pt;
+  font-size: 20px;
   float: left;
   color: #262626;
   padding-left: 45px;
@@ -176,9 +188,10 @@ p{
 
 .container-1 .icon{
   position: absolute;
+  font-size: 28px;
   top: 50%;
-  margin-left: 17px;
-  margin-top: 17px;
+  margin-left: 13px;
+  margin-top: 11px;
   z-index: 1;
   color: #4f5b66;
   text-shadow: none;
@@ -187,18 +200,6 @@ p{
 .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
   outline:none;
   background: #ffffff;
-}
-
-.vote {
-  display: flex;
-  align-items: center;
-  padding-top: 10px;
-  button{
-    cursor: pointer;
-    border-radius: 4px;
-    border: 2px solid white;
-    height: 51px;
-  }
 }
 
 .btn-info {
@@ -263,7 +264,7 @@ summary::-webkit-details-marker {
 }
 
 summary::before {
-  content: ">";
+  //content: ">";
   font-size: x-large;
   left: -8px;
   position: absolute;
@@ -313,8 +314,12 @@ iframe {
   border-radius: 14px;
   padding: 9px;
   width: min-content;
+  background-color: black;
   .score {
     font-size: 48px;
+    .scoreMax {
+      font-size: 14px;
+    }
   }
 }
 .bookResult a {
@@ -393,7 +398,7 @@ button.starIcon {
   border-radius: 4px;
   border: 2px solid white;
   height: fit-content;
-  width: 23%;
+  width: 29%;
   padding: 8px;
   i {
     font-size: 40px;
@@ -434,12 +439,15 @@ nav {
   background: aliceblue;
 }
 
+
+
 @media screen and (min-width: 600px) {
   .container {
     padding-left: 20%;
     padding-right: 20%;
     padding-top: 5%;
     h1 {
+      padding-top: 40px;
       font-size: 45px;
     }
     p, summary, h2, span, div {
@@ -455,7 +463,7 @@ nav {
       position: fixed;
       top: 0;
       left: 0;
-      height: 104px;
+      height: fit-content;
       z-index: 99;
       display: flex;
       align-items: center;
@@ -464,6 +472,9 @@ nav {
       color: white;
       font-family: Lobster;
       .hamburgerIcon {
+        @media screen and (min-width: 599px) {
+          display: none !important;
+        }
         height: 64px;
         width: 64px;
         padding: 8px;
@@ -490,9 +501,229 @@ nav {
   }
   .pagination-container {
     width: fit-content;
+    margin-left: 24%;
+    button {
+      width: 60px;
+      height: 60px;
+    }
   }
+  .itemContainer {
+    .btn-info {
+      height: initial;
+      width: initial;
+      margin: 16px;
+      border-radius: 10px;
+    }
+    .fa-star-o {
+      display: block;
+    }
+    img {
+      width: 40%;
+      max-height: 500px;
+      border-radius: 20px;
+      margin-left: 18%;
+    }
+    .review {
+      margin-right: 22%;
+      margin-bottom: 33%;
+    }
+    .vote-and-amazon-container {
+      margin: 5px 21%;
+    }
+    .vote button {
+      height: 121%;
+      margin-left: -20%;
+    }
+    .video-detail iframe {
+      height: 160%;
+    }
+  }
+
   footer {
     font-size: 20px;
   }
 }
 
+img.newsImage {
+  margin-left: 0;
+  max-height: 100%;
+}
+
+.itemContainer {
+  a {
+    color: floralwhite;
+  }
+}
+
+img.movieTvImage {
+  //width: 100%;
+  max-height: 100%;
+}
+
+.itemContainer.podcasts {
+  display: inline-block;
+  h2 {
+    margin-top: 0;
+    padding: 0 15px;
+  }
+  button {
+    margin: 16px -5px;
+  }
+  img.headImage {
+    width: 100%;
+  }
+  img.twitterLogo {
+    width: 16%;
+    float:right;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .content {
+    .itemContainer {
+      width: 60%;
+      padding: 5%;
+      img.movieTvImage {
+        margin-left: 0;
+        width: 47%;
+      }
+      .review {
+        margin-right: 10%;
+        span {
+          font-size: 97px;
+          line-height: 145px;
+          padding: 15px;
+          .scoreMax {
+            font-size: 34px;
+          }
+        }
+      }
+      .vote-and-amazon-container {
+        margin: 28px 14%;
+        .voteButton {
+          font-size: 40px;
+          margin-left: -50px;
+        }
+        .amazon-link {
+          padding-top: 10px;
+          a {
+            margin: 30px 20px 20px 30px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .itemContainer.podcasts {
+      display: inline-block;
+      padding: 1% 5%;
+      h2 {
+        font-size: 53px;
+        margin-top: 0;
+        padding: 1% 10%;
+      }
+      button {
+        margin: 29px 6px;
+        font-size: 63px;
+        width: fit-content;
+      }
+      img.headImage {
+        width: 100%;
+        margin-left: 0;
+        max-height: none;
+      }
+      img.twitterLogo {
+        width: 14%;
+        padding: 16px;
+        float: right;
+      }
+    }
+    .itemContainer img.searchBookImg {
+      width: 519px;
+      padding: 14px;
+      margin-left: 0;
+    }
+  }
+  .itemContainer.news {
+    h2 {
+      font-size: 28px;
+    }
+  }
+}
+
+.amazon-link {
+  padding-top: 20px;
+  a {
+    margin: 30px 20px 20px 30px;
+  }
+}
+
+.bookSearch {
+  padding-bottom: 60px;
+}
+
+.itemContainer img.searchBookImg {
+  width: 188px;
+  padding: 14px;
+}
+
+.desktopMenu {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  ul li {
+    list-style-type: none;
+    box-shadow: -1px 0 0 red;
+    padding: 0 4%;
+    &.last {
+      margin: 0;
+    }
+
+    a {
+      font-size: 30px;
+      line-height: normal;
+      color: $white;
+      text-decoration: none;
+
+      @include transition(.4s ease-in-out);
+      cursor: pointer;
+
+      &:hover {
+        color: $red;
+        @include transition(.4s ease-in-out);
+      }
+    }
+
+  }
+}
+
+.headerContainer hr {
+  width: 100%;
+  flex-basis: 100%;
+  height: 0;
+  margin: 0;
+  border: 0;
+}
+
+.itemContainer.news {
+  padding: 10px 30px;
+   h2 {
+     font-size: 34px;
+   }
+  .date {
+    padding-bottom: 25px;
+    font-size: 20px;
+  }
+  .articleText {
+    font-size: 20px;
+  }
+}

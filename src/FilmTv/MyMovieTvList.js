@@ -47,7 +47,7 @@ export default class MyMovieList extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="content">
                 {this.state.myMovies.map((obj, i) =>
                   MediaContainer(obj,'', i)
                 )}

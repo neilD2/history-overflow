@@ -12,21 +12,17 @@ const Books = () => {
           books by era, historical figures, etc.
         </p>
       </div>
-
-      <br/>
-      <div className="movieSearch">
+      <div>
+        <details className="myBookList">
+          <summary>See our site users favourite history books</summary>
+          <MyBookList visualMediaType='book' titleName='title' />
+        </details>
+      </div>
+      <div className="bookSearch">
         <p>
           Search for your favourite History book, and vote for it for your favorite to add to our site's top list
         </p>
         <BookSearchContainer visualMediaType='book'/>
-      </div>
-      <br/>
-      <br/>
-      <div>
-        <details className="myMovieList">
-          <summary>See our site users favourite history books</summary>
-          <MyBookList visualMediaType='book' titleName='title' />
-        </details>
       </div>
     </div>
   );

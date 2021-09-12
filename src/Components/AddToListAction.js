@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MyLists from '../Pages/MyLists';
 import { connect } from "react-redux";
 import { addFavourites,removeFavourites,addFavouriteItems,removeFavouriteItems } from "../redux/actions/index";
+import { Button } from '../StyledComponents/StyledComponents'
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -30,30 +31,31 @@ class ConnectedForm extends Component {
     this.onRemoveFavourite = this.onRemoveFavourite.bind(this);
   }
 
-  onAddFavourite(movieTitle) {
-    this.props.addFavourites( movieTitle );
+  onAddFavourite(title) {
+    this.props.addFavourites( title );
     this.props.addFavouriteItems( this.props );
   }
 
-  onRemoveFavourite(movieTitle) {
+  onRemoveFavourite(title) {
     this.props.removeFavouriteItems( this.props );
-    this.props.removeFavourites( movieTitle );
+    this.props.removeFavourites( title );
   }
 
   render() {
 
     return (
-      <button
-        type="button"
-        className={this.props.favourites.includes(this.props.movieTitle) ? "starIcon btn btn-info selected" : "starIcon btn btn-info"}
-        onClick={() => this.props.favourites.includes(this.props.movieTitle) ? this.onRemoveFavourite(this.props.movieTitle) : this.onAddFavourite(this.props.movieTitle) }
+      <Button
+        className={this.props.favourites.includes(this.props.title) ? "starIcon btn btn-info selected" : "starIcon btn btn-info"}
+        onClick={() => this.props.favourites.includes(this.props.title) ? this.onRemoveFavourite(this.props.title) : this.onAddFavourite(this.props.title) }
       >
-        {this.props.favourites.includes(this.props.movieTitle) ? "Remove Favourite" : "Add Favourite"}
+        <span className="add-to-fav-text">
+        {this.props.favourites.includes(this.props.title) ? "Remove Favourite" : "Add Favourite"}
+        </span>
         <i
           className="fa fa-star-o"
-          style={this.props.favourites.includes(this.props.movieTitle) ? { color: 'yellow', fontWeight: 'bold' } : { } }
+          style={this.props.favourites.includes(this.props.title) ? { color: 'yellow', fontWeight: 'bold' } : { } }
         />
-        </button>
+        </Button>
     )
 
     }

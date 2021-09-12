@@ -18,7 +18,7 @@ class Menu extends Component {
     const styles={
       container: {
         position: 'fixed',
-        top: 0,
+        top: 30,
         left: 0,
         height: this.state.open? '100%': 0,
         width: '100vw',

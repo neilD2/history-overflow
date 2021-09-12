@@ -18,7 +18,7 @@ class ArticleText extends Component {
     const toggledClass = expanded ? 'expanded' : 'collapsed';
 
     return (
-      <div>
+      <div className="articleText">
         <div style={{marginTop: "10px"}} className={`articleContent ${toggledClass}`}>
           {this.props.bodyText}
         </div>
