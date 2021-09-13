@@ -10,14 +10,15 @@ const Homepage = () => {
     <div className="container">
       <h1> Home </h1>
       <p>
-        Greetings! This site is all about history.
+        Greetings! I'm Neil Dickens and welcome to History Overflow.
       </p>
       <p>
-        I believe every single person should have a rounded concept of the greatest events that have occurred during the time
+        I created History Overflow in the belief that every single person should have a rounded concept of the greatest events that have occurred during the time
         that history has been recorded.
       </p>
       <p>
-        Also, get a picture of the key characters of the past, both ''good' and 'bad'.
+        Understanding of history is one of the most salient pieces of knowledge a person can have, giving them
+        the key to understanding events not only of the past, but also of the present and the future.
       </p>
     </div>
   );
